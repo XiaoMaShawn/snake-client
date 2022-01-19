@@ -1,4 +1,5 @@
 const net = require("net");
+const { stdin } = require("process");
 
 const connect = function() {
   const conn = net.createConnection({
