@@ -9,6 +9,11 @@ const connect = function() {
   // interpret incoming data as text
   conn.setEncoding("utf8");
 
+  conn.on('connect', () => {
+    console.log('Successfully connected to game server');
+    conn.write('Name: XMS');
+  })
+
   conn.on("data", (data) => {
     // code that log out data when player get it from the server.
     console.log('Server says: ', data);
